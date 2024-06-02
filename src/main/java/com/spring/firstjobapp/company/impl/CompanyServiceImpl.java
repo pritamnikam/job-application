@@ -17,7 +17,6 @@ class CompanyServiceImpl implements CompanyService {
         this.companyRepository = companyRepository;
     }
 
-
     @Override
     public List<Company> getAllCompanies() {
         return this.companyRepository.findAll();
@@ -42,6 +41,7 @@ class CompanyServiceImpl implements CompanyService {
             company.setName(updatedCompany.getName());
             company.setDescription(updatedCompany.getDescription());
             company.setJobs(updatedCompany.getJobs());
+            company.setReviews(updatedCompany.getReviews());
             this.companyRepository.save(company);
             return true;
         }
